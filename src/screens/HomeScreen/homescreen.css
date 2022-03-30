@@ -1,0 +1,40 @@
+.hero-banner {
+  height: 40vh;
+  width: 100%;
+  background-image: url("../../assets/homescreen/hero_iphone_13.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-heading {
+  padding-top: 1rem;
+}
+
+.container {
+  margin: 2rem 0rem;
+}
+.section-heading:before,
+.section-heading:after {
+  content: "";
+  flex-grow: 1;
+  border-top: 2px solid var(--dim-grey);
+  margin: auto 10px;
+}
+.product-list {
+  margin-top: 1rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 500px) {
+  .hero-heading {
+    font-size: 1.5rem;
+  }
+  .section-heading {
+    font-size: 1.3rem;
+  }
+  .vertical-card {
+    width: 10rem;
+    gap: 5px;
+  }
+}

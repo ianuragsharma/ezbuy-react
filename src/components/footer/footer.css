@@ -1,0 +1,12 @@
+.footer {
+  padding: 1rem 0rem;
+  background-color: var(--brand-primary);
+}
+
+.footer .footer-item {
+  margin-top: 1rem;
+  justify-content: center;
+}
+.footer .footer-item > * {
+  margin: 0rem 1rem;
+}
