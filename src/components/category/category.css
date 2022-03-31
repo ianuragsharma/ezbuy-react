@@ -18,7 +18,7 @@
   background-color: var(--dim-grey);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 32em) {
   .category-item {
     max-width: 10rem;
   }
