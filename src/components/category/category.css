@@ -1,0 +1,25 @@
+.category-item {
+  margin-top: 1rem;
+  position: relative;
+  max-width: 13rem;
+  border: 2px solid var(--dim-grey);
+  border-radius: 5px;
+}
+.category-item:hover {
+  border: 5px solid var(--dim-grey);
+}
+.category-overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-weight: 900;
+  background-color: var(--dim-grey);
+}
+
+@media screen and (max-width: 32em) {
+  .category-item {
+    max-width: 10rem;
+  }
+}

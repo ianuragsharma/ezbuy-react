@@ -1,0 +1,17 @@
+/* overwriting element-UI css  */
+.card-dismiss > span {
+  position: absolute;
+  content: "";
+  top: 5px;
+  right: 5px;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  background-color: var(--dim-grey);
+  color: var(--solid-white);
+  cursor: pointer;
+}
+.card-dismiss > span:hover {
+  color: var(--alert-red);
+}

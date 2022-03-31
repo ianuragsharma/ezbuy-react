@@ -1,0 +1,15 @@
+.container {
+  margin: 2rem 0rem;
+}
+.section-heading:before,
+.section-heading:after {
+  content: "";
+  flex-grow: 1;
+  border-top: 2px solid var(--dim-grey);
+  margin: auto 10px;
+}
+.product-list {
+  margin-top: 1rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
