@@ -1,0 +1,27 @@
+/* product filter  */
+.product-aside {
+  width: 15rem;
+  height: 100vh;
+  overflow-y: hidden;
+  padding: 1rem;
+  float: left;
+  border-right: 2px solid var(--brand-secondary);
+}
+.product-aside > * {
+  margin: 1rem 0rem;
+}
+.filter-list {
+  border-top: 1px solid var(--brand-secondary);
+}
+.filter-list > * {
+  margin-top: 8px;
+}
+.btn-clear:hover {
+  color: var(--brand-primary);
+}
+@media only screen and (max-width: 45em) {
+  .product-aside {
+    display: none;
+    /* for now displaying none will use hamburger menu later on  */
+  }
+}

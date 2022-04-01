@@ -1,0 +1,18 @@
+.product {
+  padding: 1rem 0rem;
+}
+
+@media screen and (max-width: 32em) {
+  .product {
+    padding: 0rem;
+  }
+  .product-list {
+    gap: 0rem;
+  }
+  .product-list > * {
+    margin: 10px 0px;
+  }
+  .product-heading {
+    font-size: 1.3rem;
+  }
+}

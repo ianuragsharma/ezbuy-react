@@ -1,5 +1,5 @@
 .hero-banner {
-  height: 40vh;
+  min-height: 40vh;
   width: 100%;
   background-image: url("../../assets/homescreen/hero_iphone_13.jpg");
   background-position: center;
@@ -24,6 +24,7 @@
   margin-top: 1rem;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 @media screen and (max-width: 32em) {
