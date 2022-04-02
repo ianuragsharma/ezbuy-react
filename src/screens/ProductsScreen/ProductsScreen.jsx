@@ -27,7 +27,7 @@ const ProductsScreen = () => {
         <div className="product-list flex-row">
           {products &&
             sortedAndFilteredProducts().map((product) => (
-              <Product key={product.id} product={product} />
+              <Product key={product._id} product={product} />
             ))}
         </div>
       </div>
