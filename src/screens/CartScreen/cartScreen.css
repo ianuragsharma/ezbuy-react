@@ -1,0 +1,26 @@
+.cart-container {
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cart-heading {
+  margin: 1rem 0rem;
+}
+.cart-products {
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+@media only screen and (max-width: 56em) {
+  .cart-products {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 32em) {
+  .price-container {
+    width: 18rem;
+  }
+  .cart-btn {
+    width: 10rem;
+  }
+}

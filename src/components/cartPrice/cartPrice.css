@@ -1,0 +1,23 @@
+.price-container {
+  width: 20rem;
+  padding: 1rem;
+  border: 1px solid var(--brand-secondary);
+  border-radius: 5px;
+}
+.price-container > * {
+  margin: 10px 0rem;
+}
+.price-breakdown {
+  border-top: 1px solid var(--solid-black);
+  border-bottom: 1px solid var(--solid-black);
+}
+.price-breakdown > * {
+  margin: 8px 0px;
+}
+.price-details {
+  justify-content: space-between;
+}
+.order-btn {
+  margin: 0;
+  width: 100%;
+}

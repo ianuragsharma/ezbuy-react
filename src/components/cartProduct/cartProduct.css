@@ -1,0 +1,24 @@
+.horizontal-card {
+  border: none;
+}
+.cart-img {
+  object-fit: scale-down;
+}
+.quantity-input {
+  padding: 0rem;
+  width: 1.5rem;
+  border: 1px solid var(--brand-secondary);
+}
+.quantity-btn:first-child {
+  margin-left: 1rem;
+}
+.quantity-btn {
+  color: var(--brand-secondary);
+}
+.cart-btn {
+  width: 15rem;
+  margin-top: 1rem;
+}
+.cart-btn > button {
+  margin-top: 8px;
+}
