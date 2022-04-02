@@ -4,9 +4,17 @@ const Navbar = () => {
   return (
     <div>
       <nav className="nav-container flex-row">
-        <Link to="/">
-          <h5 className="fw-500">ezBuy</h5>
-        </Link>
+        <div className="flex-row">
+          <Link to="/">
+            <h4 className="fw-500">ezBuy</h4>
+          </Link>
+
+          <Link to="./products">
+            <button className="btn btn-outlined-secondary text-xl btn-cta">
+              Shop
+            </button>
+          </Link>
+        </div>
         <input
           name="name"
           type="text"

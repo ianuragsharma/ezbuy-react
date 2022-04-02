@@ -2,16 +2,26 @@
 .card-dismiss > span {
   position: absolute;
   content: "";
-  top: 5px;
-  right: 5px;
-  border-radius: 50%;
   height: 1.5rem;
   width: 1.5rem;
   line-height: 1.5rem;
+}
+
+.wishlist {
+  top: 5px;
+  right: 5px;
+  border-radius: 50%;
   background-color: var(--dim-grey);
   color: var(--solid-white);
   cursor: pointer;
 }
-.card-dismiss > span:hover {
+.wishlist:hover {
   color: var(--alert-red);
+}
+.rating {
+  min-width: 4rem;
+  min-height: 1.5rem;
+  top: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10%;
 }

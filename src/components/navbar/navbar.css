@@ -5,7 +5,12 @@
   height: 4rem;
   border-bottom: 2px solid var(--bg-offgrey);
 }
-
+.btn-cta {
+  margin-left: 1rem;
+  border-radius: 10%;
+  border: none;
+  padding: 5px 10px;
+}
 .nav-container > * {
   margin: 0 auto;
 }

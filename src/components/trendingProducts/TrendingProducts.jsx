@@ -1,5 +1,4 @@
 import { Product } from "../";
-import "./trendingProducts.css";
 import { useProducts } from "../../contexts";
 const TrendingProducts = () => {
   const { products } = useProducts();
