@@ -1,7 +1,7 @@
 import "./footer.css";
 const Footer = () => {
   return (
-    <div>
+    <>
       <footer className="footer text-white text-center">
         <div className="fw-800 text-xl">
           Get in touch with me:
@@ -37,7 +37,7 @@ const Footer = () => {
           </li>
         </ul>
       </footer>
-    </div>
+    </>
   );
 };
 
