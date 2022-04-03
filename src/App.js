@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { HomeScreen, ProductsScreen } from "./screens";
+import { HomeScreen, ProductsScreen, CartScreen } from "./screens";
 import { Footer, Navbar } from "./components";
 const App = () => {
   return (
@@ -9,9 +9,8 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" exact element={<HomeScreen />} />
-        </Routes>
-        <Routes>
           <Route path="/products" exact element={<ProductsScreen />} />
+          <Route path="/cart" exact element={<CartScreen />} />
         </Routes>
         <Footer />
       </div>

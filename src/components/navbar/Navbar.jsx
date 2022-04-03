@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import { useCart } from "../../contexts";
 const Navbar = () => {
+  const { cartState } = useCart();
   return (
     <div>
       <nav className="nav-container flex-row">
@@ -39,10 +41,15 @@ const Navbar = () => {
           </li>
 
           <li>
-            <Link to="./somewhere">
+            <Link to="./cart">
               <div className="badge badge-icon">
                 <i className="fas fa-shopping-cart fa-lg"></i>
-                <div className="number badge-secondary text-white">2</div>
+
+                {cartState.length > 0 && (
+                  <div className="number badge-secondary text-white">
+                    {cartState.length}
+                  </div>
+                )}
               </div>
             </Link>
           </li>

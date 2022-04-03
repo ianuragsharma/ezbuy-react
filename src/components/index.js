@@ -4,3 +4,5 @@ export { Footer } from "./footer/Footer";
 export { Navbar } from "./navbar/Navbar";
 export { Product } from "./product/Product";
 export { Filter } from "./filter/Filter";
+export { CartProduct } from "./cartProduct/CartProduct";
+export { CartPrice } from "./cartPrice/CartPrice";

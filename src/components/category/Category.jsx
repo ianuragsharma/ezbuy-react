@@ -17,7 +17,7 @@ const Category = () => {
     })();
   }, []);
   const cateogoryList = cateogory.map((item) => (
-    <div key={item.id} className="category-item">
+    <div key={item._id} className="category-item">
       <Link to="/somewhere">
         <img
           loading="lazy"

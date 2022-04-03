@@ -1,4 +1,5 @@
 .footer {
+  margin-top: auto;
   padding: 1rem 0rem;
   background-color: var(--brand-primary);
 }

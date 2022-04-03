@@ -1,5 +1,12 @@
+import { Link } from "react-router-dom";
+import { useCart } from "../../contexts";
 import "./product.css";
+
 const Product = ({ product }) => {
+  const { cartState, cartDispatch } = useCart();
+  const isAlreadyInCart = () =>
+    cartState.some((item) => item._id === product._id);
+
   return (
     <>
       <div className="vertical-card flex-column card-dismiss ">
@@ -21,9 +28,20 @@ const Product = ({ product }) => {
           </p>
         </div>
         <div className="card-footer">
-          <button className="btn btn-solid-primary buy-button text-white">
-            ADD TO CART
-          </button>
+          {isAlreadyInCart() ? (
+            <button className="btn btn-solid-primary buy-button text-white">
+              <Link to="/cart">Go to Cart</Link>
+            </button>
+          ) : (
+            <button
+              className="btn btn-solid-primary buy-button text-white"
+              onClick={() =>
+                cartDispatch({ type: "ADD_TO_CART", payload: product })
+              }
+            >
+              Add To Cart
+            </button>
+          )}
         </div>
       </div>
     </>
