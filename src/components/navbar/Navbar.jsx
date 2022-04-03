@@ -44,9 +44,12 @@ const Navbar = () => {
             <Link to="./cart">
               <div className="badge badge-icon">
                 <i className="fas fa-shopping-cart fa-lg"></i>
-                <div className="number badge-secondary text-white">
-                  {cartState.length}
-                </div>
+
+                {cartState.length > 0 && (
+                  <div className="number badge-secondary text-white">
+                    {cartState.length}
+                  </div>
+                )}
               </div>
             </Link>
           </li>
