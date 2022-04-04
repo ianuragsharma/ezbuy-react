@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
-import { useCart } from "../../contexts";
+import { useCart, useWishlist } from "../../contexts";
 import "./product.css";
 
 const Product = ({ product }) => {
   const { cartState, cartDispatch } = useCart();
+  const { wishlistState, wishlistDispatch } = useWishlist();
+  // this function returns true if the porduct is present in the cartState by comparing the id of item in cartState and the product which is passed as prop
   const isAlreadyInCart = () =>
     cartState.some((item) => item._id === product._id);
-
+  // similar to above function but works on filted product only.
+  const favouratedItem = () =>
+    wishlistState.some((item) => item._id === product._id);
   return (
     <>
       <div className="vertical-card flex-column card-dismiss ">
@@ -15,8 +19,17 @@ const Product = ({ product }) => {
           <i className="fa-solid fa-star text-primary"></i> |{" "}
           {product.allRating}
         </span>
-        <span className="text-center wishlist">
-          <i className="fa-solid fa-heart"></i>
+        <span
+          className="text-center wishlist"
+          onClick={() =>
+            wishlistDispatch({ type: "TOGGLE_FAVOURATE", payload: product })
+          }
+        >
+          {favouratedItem() ? (
+            <i className="fa-solid fa-heart checked-heart"></i>
+          ) : (
+            <i className="fa-solid fa-heart "></i>
+          )}
         </span>
         <img src={product.imgURL} loading="lazy" alt={product.imgAlt} />
         <div className="card-details-container">
