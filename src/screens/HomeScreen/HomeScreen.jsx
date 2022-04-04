@@ -13,7 +13,7 @@ const HomeScreen = () => {
         </div>
       </section>
       <section className="container">
-        <h4 className="flex-row section-heading fw-400">Browse Category</h4>
+        <h4 className="flex-row section-heading fw-400">Trending Products</h4>
         <div className="product-list flex-row">
           <TrendingProducts />
         </div>

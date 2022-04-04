@@ -1,0 +1,10 @@
+.wishlist-heading {
+  margin: 2rem 0rem;
+}
+.wishlist-product {
+  gap: 1rem;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 60rem;
+  flex-wrap: wrap;
+}
