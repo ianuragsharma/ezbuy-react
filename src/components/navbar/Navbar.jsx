@@ -26,7 +26,7 @@ const Navbar = () => {
         />
         <ul className="flex-row">
           <li>
-            <Link to="/somewhere">
+            <Link to="/login">
               <div className="badge badge-icon">
                 <i className="fa-solid fa-user"></i>
               </div>
