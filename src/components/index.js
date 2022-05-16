@@ -6,3 +6,4 @@ export { Product } from "./product/Product";
 export { Filter } from "./filter/Filter";
 export { CartProduct } from "./cartProduct/CartProduct";
 export { CartPrice } from "./cartPrice/CartPrice";
+export { CustomToast } from "./toast/CustomToast";
