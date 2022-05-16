@@ -1,11 +1,25 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../contexts";
 import "./login.css";
+import { loginService } from "../../../services";
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const { setUser, setEncodedToken } = useAuth();
+  const loginHandler = (e) => {
+    e.preventDefault();
+    loginService(email, password, setUser, navigate, setEncodedToken);
+  };
+  const guestLoginHandler = () => {
+    setEmail("adarshbalika@gmail.com");
+    setPassword("adarshbalika");
+  };
   return (
     <div>
-      <div className="auth-container">
+      <form className="auth-container" onSubmit={loginHandler}>
         <h4 className="text-center">Login</h4>
-
         <div className="user-details flex-column">
           <label htmlFor="email" className="input-label text-base">
             Email:
@@ -15,6 +29,8 @@ const Login = () => {
             type="email"
             className="input-area text-base"
             placeholder="Enter Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <label htmlFor="password" className="input-label text-base">
@@ -27,8 +43,10 @@ const Login = () => {
             required
             minLength="4"
             placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <div className="flex-row">
+          {/* <div className="flex-row">
             <span>
               <input
                 type="checkbox"
@@ -41,9 +59,15 @@ const Login = () => {
             <span className="login-preference text-primary">
               <a href="#"> Forgot Password</a>
             </span>
-          </div>
+          </div> */}
           <button className="btn btn-solid-primary text-base text-white">
             Login
+          </button>
+          <button
+            className="btn btn-outlined-secondary text-base"
+            onClick={guestLoginHandler}
+          >
+            Login as guest user
           </button>
           <button className="link-btn text-base ">
             <Link to="/signup">
@@ -51,7 +75,7 @@ const Login = () => {
             </Link>
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
