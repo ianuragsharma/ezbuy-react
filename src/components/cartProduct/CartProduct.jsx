@@ -1,6 +1,12 @@
 import "./cartProduct.css";
 import { useCart, useWishlist } from "../../contexts";
 import { Link } from "react-router-dom";
+import {
+  addToWishlistService,
+  removeFromCartService,
+  updateQtyService,
+} from "../../services";
+
 const CartProduct = ({ cartItem }) => {
   const { cartDispatch } = useCart();
   const { wishlistState, wishlistDispatch } = useWishlist();
@@ -27,7 +33,7 @@ const CartProduct = ({ cartItem }) => {
             <button
               className="quantity-btn"
               onClick={() =>
-                cartDispatch({ type: "INCREASE_QTY", payload: cartItem._id })
+                updateQtyService(cartItem, cartDispatch, "increment")
               }
             >
               <i className="fa-solid fa-circle-plus fa-lg"></i>
@@ -36,7 +42,7 @@ const CartProduct = ({ cartItem }) => {
             <button
               className="quantity-btn"
               onClick={() =>
-                cartDispatch({ type: "DECREASE_QTY", payload: cartItem._id })
+                updateQtyService(cartItem, cartDispatch, "decrement")
               }
             >
               <i className="fa-solid fa-circle-minus fa-lg"></i>
@@ -45,12 +51,7 @@ const CartProduct = ({ cartItem }) => {
           <div className="cart-btn flex-column">
             <button
               className="btn btn-outlined-secondary "
-              onClick={() =>
-                cartDispatch({
-                  type: "REMOVE_FROM_CART",
-                  payload: cartItem._id,
-                })
-              }
+              onClick={() => removeFromCartService(cartItem, cartDispatch)}
             >
               Remove From Cart
             </button>
@@ -61,12 +62,7 @@ const CartProduct = ({ cartItem }) => {
             ) : (
               <button
                 className="btn btn-solid-primary  text-white"
-                onClick={() =>
-                  wishlistDispatch({
-                    type: "TOGGLE_FAVOURATE",
-                    payload: cartItem,
-                  })
-                }
+                onClick={() => addToWishlistService(cartItem, wishlistDispatch)}
               >
                 Add to Wishlist
               </button>
