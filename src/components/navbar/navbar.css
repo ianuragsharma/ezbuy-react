@@ -7,9 +7,9 @@
 }
 .btn-cta {
   margin-left: 1rem;
-  border-radius: 10%;
+  border-radius: 5%;
   border: none;
-  padding: 5px 10px;
+  padding: 4px 8px;
 }
 .nav-container > * {
   margin: 0 auto;
@@ -21,4 +21,10 @@
 }
 .nav-container li:not(:first-child) {
   margin-left: 1.5rem;
+}
+.navitem-container {
+  align-items: center;
+}
+.logout-btn {
+  padding: 4px 8px;
 }

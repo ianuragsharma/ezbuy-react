@@ -8,7 +8,7 @@ import {
   Login,
   Signup,
 } from "./screens";
-import { Footer, Navbar } from "./components";
+import { Footer, Navbar, CustomToast } from "./components";
 const App = () => {
   return (
     <>
@@ -23,6 +23,7 @@ const App = () => {
           <Route path="/signup" exact element={<Signup />} />
         </Routes>
         <Footer />
+        <CustomToast />
       </div>
     </>
   );
