@@ -2,8 +2,10 @@ import "./wishlistScreen.css";
 import { useWishlist } from "../../contexts";
 import { Product } from "../../components";
 import { Link } from "react-router-dom";
+import { useDocumentTitle } from "../../hooks";
 const WishlistScreen = () => {
   const { wishlistState } = useWishlist();
+  useDocumentTitle("Wishlist");
   const wishlistItems = wishlistState.map((item) => (
     <Product key={item._id} product={item} />
   ));

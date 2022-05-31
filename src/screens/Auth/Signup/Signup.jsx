@@ -3,6 +3,7 @@ import { useState, useReducer } from "react";
 import { authReducer } from "../../../reducers";
 import { useAuth } from "../../../contexts";
 import { signupService } from "../../../services";
+import { useDocumentTitle } from "../../../hooks";
 const Signup = () => {
   const [userState, userDispatch] = useReducer(authReducer, {
     firstName: "",
@@ -15,6 +16,7 @@ const Signup = () => {
   const { email, firstName, lastName, password, confirmPassword } = userState;
   const { setUser } = useAuth();
   const [formError, setFormError] = useState(false);
+  useDocumentTitle("Signup");
   const singUpHandler = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {

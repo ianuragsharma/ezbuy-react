@@ -3,11 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../contexts";
 import "./login.css";
 import { loginService } from "../../../services";
+import { useDocumentTitle } from "../../../hooks";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const { setUser, setEncodedToken } = useAuth();
+  useDocumentTitle("Login");
   const loginHandler = (e) => {
     e.preventDefault();
     loginService(email, password, setUser, navigate, setEncodedToken);
@@ -16,6 +18,7 @@ const Login = () => {
     setEmail("adarshbalika@gmail.com");
     setPassword("adarshbalika");
   };
+
   return (
     <div>
       <form className="auth-container" onSubmit={loginHandler}>

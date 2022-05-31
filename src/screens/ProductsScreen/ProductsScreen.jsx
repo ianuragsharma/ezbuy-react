@@ -7,9 +7,11 @@ import {
   ratingFilterHelper,
   categoryFilterHelper,
 } from "../../helper";
+import { useDocumentTitle } from "../../hooks";
 const ProductsScreen = () => {
   const { state } = useSortAndFilter();
   const { products } = useProducts();
+  useDocumentTitle("Products");
   const sortedAndFilteredProducts = () => {
     const bySortArr = sortedFilterHelper(products, state.bySort);
     const byPriceArr = priceFilterHelper(bySortArr, state.byPrice);

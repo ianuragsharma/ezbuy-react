@@ -2,8 +2,10 @@ import "./cartScreen.css";
 import { CartProduct, CartPrice } from "../../components";
 import { useCart } from "../../contexts";
 import { Link } from "react-router-dom";
+import { useDocumentTitle } from "../../hooks";
 const CartScreen = () => {
-  const { cartState, cartDispatch } = useCart();
+  const { cartState } = useCart();
+  useDocumentTitle("Cart");
   const cartItems = cartState.map((item) => (
     <CartProduct key={item._id} cartItem={item} />
   ));

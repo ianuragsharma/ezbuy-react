@@ -1,7 +1,9 @@
 import "./homescreen.css";
 import { Link } from "react-router-dom";
 import { Category, TrendingProducts } from "../../components";
+import { useDocumentTitle } from "../../hooks";
 const HomeScreen = () => {
+  useDocumentTitle("Home");
   return (
     <>
       <section className="hero-banner">
