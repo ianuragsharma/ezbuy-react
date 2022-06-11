@@ -15,8 +15,8 @@ const Login = () => {
     loginService(email, password, setUser, navigate, setEncodedToken);
   };
   const guestLoginHandler = () => {
-    setEmail("adarshbalika@gmail.com");
-    setPassword("adarshbalika");
+    setEmail("anuragsharma0711@gmail.com");
+    setPassword("anurag12");
   };
 
   return (
