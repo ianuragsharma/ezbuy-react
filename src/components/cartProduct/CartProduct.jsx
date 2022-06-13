@@ -32,20 +32,21 @@ const CartProduct = ({ cartItem }) => {
             Quantity:
             <button
               className="quantity-btn"
-              onClick={() =>
-                updateQtyService(cartItem, cartDispatch, "increment")
-              }
-            >
-              <i className="fa-solid fa-circle-plus fa-lg"></i>
-            </button>
-            <span>{cartItem.quantity}</span>
-            <button
-              className="quantity-btn"
+              disabled={cartItem.quantity < 2}
               onClick={() =>
                 updateQtyService(cartItem, cartDispatch, "decrement")
               }
             >
               <i className="fa-solid fa-circle-minus fa-lg"></i>
+            </button>
+            <span>{cartItem.quantity}</span>
+            <button
+              className="quantity-btn"
+              onClick={() =>
+                updateQtyService(cartItem, cartDispatch, "increment")
+              }
+            >
+              <i className="fa-solid fa-circle-plus fa-lg"></i>
             </button>
           </p>
           <div className="cart-btn flex-column">
