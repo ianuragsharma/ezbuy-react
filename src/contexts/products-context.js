@@ -12,7 +12,7 @@ const ProductsProvider = ({ children }) => {
         const productData = await axios.get("/api/products");
         setProducts(productData.data.products);
       } catch (error) {
-        console.error(error.message);
+        throw new Error(error.message);
       }
     })();
   }, []);
