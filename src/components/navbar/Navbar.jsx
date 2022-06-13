@@ -1,40 +1,55 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./navbar.css";
-import { useCart, useWishlist, useAuth } from "../../contexts";
+import {
+  useCart,
+  useWishlist,
+  useAuth,
+  useSortAndFilter,
+} from "../../contexts";
 const Navbar = () => {
-  const { cartState } = useCart();
-  const { wishlistState } = useWishlist();
+  let location = useLocation();
+  const { cartState, cartDispatch } = useCart();
+  const { wishlistState, wishlistDispatch } = useWishlist();
   const { user, setUser } = useAuth();
+  const { state, dispatch } = useSortAndFilter();
   const navigate = useNavigate();
   const logoutHandler = () => {
     setUser(null);
     localStorage.removeItem("token");
     navigate("/");
+    cartDispatch({ type: "CLEAR_CART" });
+    wishlistDispatch({ type: "CLEAR_WISHLIST" });
   };
   return (
     <div>
       <nav className="nav-container flex-row">
         <div className="flex-row">
           <Link to="/">
-            <h4 className="fw-500">ezBuy</h4>
+            <h4 className="fw-400   heading">ezBuy</h4>
           </Link>
 
           <Link to="./products">
-            <button className="btn btn-outlined-secondary text-xl btn-cta">
+            <button className="btn btn-solid-primary text-white text-lg btn-cta">
               Shop
             </button>
           </Link>
         </div>
-        <input
-          name="name"
-          type="text"
-          className="input-area text-base "
-          placeholder="Search..."
-        />
+        {location.pathname === "/products" && (
+          <input
+            name="name"
+            type="text"
+            className="input-area text-base "
+            placeholder="Search..."
+            onChange={(event) =>
+              dispatch({ type: "SEARCH_PRODUCT", payload: event.target.value })
+            }
+          />
+        )}
+
         <ul className="flex-row navitem-container">
           {user ? (
             <button
-              className="btn btn-solid-primary logout-btn text-base text-white"
+              className="btn btn-outlined-secondary logout-btn text-base"
               onClick={logoutHandler}
             >
               Logout

@@ -20,7 +20,8 @@ const cartReducer = (cartState, { type, payload }) => {
             }
           : item
       );
-
+    case "CLEAR_CART":
+      return [];
     // case "INPUT_QTY":
     //   return cartState.map((item) =>
     //     item._id === payload.cartItemId

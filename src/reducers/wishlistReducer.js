@@ -8,6 +8,8 @@ const wishlistReducer = (wishlistState, { type, payload }) => {
         return [...wishlistState, { ...payload, isFavourated: true }];
       }
     }
+    case "CLEAR_WISHLIST":
+      return [];
     default:
       return wishlistState;
   }
