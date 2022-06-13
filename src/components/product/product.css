@@ -28,3 +28,9 @@
 .checked-heart {
   color: red;
 }
+.card-overlay::after {
+  background-color: var(--solid-white);
+}
+.card-overlay .overlay {
+  background-color: var(--solid-black);
+}

@@ -35,9 +35,14 @@ const Product = ({ product }) => {
       errorToast("Please login first");
     }
   };
+
   return (
     <>
-      <div className="vertical-card flex-column card-dismiss ">
+      <div
+        className={`vertical-card flex-column card-dismiss ${
+          !product.inStock && "card-overlay"
+        } `}
+      >
         <span className="text-xs text-center text-black rating">
           {product.rating}
           <i className="fa-solid fa-star text-primary"></i> |{" "}
@@ -58,6 +63,12 @@ const Product = ({ product }) => {
             ></i>
           )}
         </span>
+        {!product.inStock && (
+          <div className="overlay text-xl text-white text-center">
+            Out of Stock
+          </div>
+        )}
+
         <img src={product.imgURL} loading="lazy" alt={product.imgAlt} />
         <div className="card-details-container">
           <h3 className="text-base fw-500">{product.title}</h3>
@@ -76,6 +87,7 @@ const Product = ({ product }) => {
             <button
               className="btn btn-solid-primary buy-button text-white"
               onClick={() => addToCartHadnler()}
+              disabled={!product.inStock}
             >
               Add To Cart
             </button>
