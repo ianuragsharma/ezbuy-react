@@ -4,6 +4,12 @@
   height: 4rem;
   border-bottom: 2px solid var(--bg-offgrey);
 }
+.logo-container {
+  align-items: center;
+}
+.logo {
+  width: 3.5rem;
+}
 .btn-cta {
   border-radius: 5%;
   border: none;
@@ -30,8 +36,8 @@
 }
 
 @media screen and (max-width: 32em) {
-  .heading {
-    font-size: 1.5rem;
+  .logo {
+    width: 3rem;
   }
   .nav-container > * {
     margin: 0.5rem;
