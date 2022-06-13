@@ -12,6 +12,7 @@ const Navbar = () => {
   const { wishlistState, wishlistDispatch } = useWishlist();
   const { user, setUser } = useAuth();
   const { state, dispatch } = useSortAndFilter();
+  const { bySearch } = state;
   const navigate = useNavigate();
   const logoutHandler = () => {
     setUser(null);
@@ -40,6 +41,7 @@ const Navbar = () => {
             type="text"
             className="input-area text-base "
             placeholder="Search..."
+            value={bySearch}
             onChange={(event) =>
               dispatch({ type: "SEARCH_PRODUCT", payload: event.target.value })
             }

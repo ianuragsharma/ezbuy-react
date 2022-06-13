@@ -69,6 +69,7 @@ const sortAndFilterReducer = (state, action) => {
         },
         byPrice: 100000,
         byRating: 0,
+        bySearch: "",
       };
 
     default:
