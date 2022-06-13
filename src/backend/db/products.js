@@ -6,12 +6,11 @@ import { v4 as uuid } from "uuid";
  * */
 
 export const products = [
-  // smartphones
   {
     _id: uuid(),
     title: "Iphone 13",
     description: "Apple Iphone 13 256GB",
-    categoryName: "smartphones",
+    categoryName: "smartphone",
     brand: "apple",
     imgURL:
       "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/ecommerce/productIMG/smartphone/iphone.jpg",
@@ -21,13 +20,13 @@ export const products = [
     discountPrice: 80100,
     inStock: true,
     rating: 4,
-    allRating: 500,
+    allRating: 692,
   },
   {
     _id: uuid(),
     title: "One Plus Nord 2",
     description: "One Plus Nord 2 128GB",
-    categoryName: "smartphones",
+    categoryName: "smartphone",
     brand: "one plus",
     imgURL:
       "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/ecommerce/productIMG/smartphone/oneplus.jpg",
@@ -37,13 +36,13 @@ export const products = [
     discountPrice: 21250,
     inStock: true,
     rating: 3,
-    allRating: 500,
+    allRating: 259,
   },
   {
     _id: uuid(),
     title: "Samsung S20 FE",
     description: "Samsung S20 FE 256GB",
-    categoryName: "smartphones",
+    categoryName: "smartphone",
     brand: "samsung",
     imgURL:
       "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/ecommerce/productIMG/smartphone/samsung.jpg",
@@ -53,13 +52,13 @@ export const products = [
     discountPrice: 53100,
     inStock: true,
     rating: 4,
-    allRating: 500,
+    allRating: 69,
   },
   {
     _id: uuid(),
     title: "Redmi Note 11T",
     description: "Redmi Note 11T 256 GB",
-    categoryName: "smartphones",
+    categoryName: "smartphone",
     brand: "redmi",
     imgURL:
       "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/ecommerce/productIMG/smartphone/xiaomi.jpg",
@@ -69,7 +68,7 @@ export const products = [
     discountPrice: 13410,
     inStock: true,
     rating: 3,
-    allRating: 500,
+    allRating: 726,
   },
   // Laptop
   {
@@ -86,7 +85,7 @@ export const products = [
     discountPrice: 74700,
     inStock: true,
     rating: 5,
-    allRating: 500,
+    allRating: 69,
   },
   {
     _id: uuid(),
@@ -102,7 +101,7 @@ export const products = [
     discountPrice: 25650,
     inStock: true,
     rating: 3,
-    allRating: 500,
+    allRating: 469,
   },
   {
     _id: uuid(),
@@ -118,13 +117,13 @@ export const products = [
     discountPrice: 55710,
     inStock: true,
     rating: 4,
-    allRating: 500,
+    allRating: 36,
   },
   {
     _id: uuid(),
     title: "Lenovo Legion 5",
     description: "16GB RAM, 1TB SSD RTX 3060",
-    categoryName: "lenovo",
+    categoryName: "laptop",
     brand: "lenovo",
     imgURL:
       "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/ecommerce/productIMG/laptop/Lenovo%20Legion%205.jpg",
@@ -134,24 +133,24 @@ export const products = [
     discountPrice: 72900,
     inStock: true,
     rating: 4,
-    allRating: 500,
+    allRating: 254,
   },
   // Camera
   {
     _id: uuid(),
     title: "Nikon D780",
     description: "Nikon25.28 MP DSLR Camera",
-    categoryName: "lenovo",
-    brand: "lenovo",
+    categoryName: "camera",
+    brand: "Nikon",
     imgURL:
       "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/ecommerce/productIMG/camera/Nikon%20D780.jpg",
-    imgAlt: "lenovo lenovo",
+    imgAlt: "nikon camera",
     price: 45000,
     discount: 5,
     discountPrice: 42750,
     inStock: true,
     rating: 4,
-    allRating: 500,
+    allRating: 459,
   },
   {
     _id: uuid(),
@@ -161,13 +160,13 @@ export const products = [
     brand: "Fujifilm",
     imgURL:
       "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/ecommerce/productIMG/camera/Fujifilm%2024.2MP.jpg",
-    imgAlt: "lenovo lenovo",
+    imgAlt: "fujifilm camera",
     price: 59000,
     discount: 15,
     discountPrice: 50150,
     inStock: true,
     rating: 2,
-    allRating: 500,
+    allRating: 956,
   },
   {
     _id: uuid(),
@@ -183,6 +182,72 @@ export const products = [
     discountPrice: 32295,
     inStock: true,
     rating: 4,
-    allRating: 500,
+    allRating: 422,
+  },
+
+  // Headphones
+  {
+    _id: uuid(),
+    title: "Dell AE2",
+    description: "USB Wired Gaming Headphones",
+    categoryName: "headphones",
+    brand: "dell",
+    imgURL:
+      "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/ecommerce/productIMG/headphones/Dell%20AE2%20USB%20Wired%20Gaming%20Headphones.png",
+    imgAlt: "dell headphone",
+    price: 3490,
+    discount: 10,
+    discountPrice: 3141,
+    inStock: false,
+    rating: 1,
+    allRating: 26,
+  },
+  {
+    _id: uuid(),
+    title: "JBL Tune 500",
+    description: "Wired Headphone",
+    categoryName: "headphones",
+    brand: "jbl",
+    imgURL:
+      "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/ecommerce/productIMG/headphones/JBL%20Tune%20500%20Wired%20Headphone.png",
+    imgAlt: " headphone",
+    price: 1800,
+    discount: 10,
+    discountPrice: 1620,
+    inStock: true,
+    rating: 4,
+    allRating: 726,
+  },
+  {
+    _id: uuid(),
+    title: "Sony MDR-ZX110",
+    description: "Passive Noise Cancellation",
+    categoryName: "headphones",
+    brand: "sony",
+    imgURL:
+      "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/ecommerce/productIMG/headphones/Sony%20Headphone%20MDR-ZX110.png",
+    imgAlt: "sony headphone",
+    price: 2400,
+    discount: 10,
+    discountPrice: 2160,
+    inStock: true,
+    rating: 3,
+    allRating: 269,
+  },
+  {
+    _id: uuid(),
+    title: "Sony MDR-XB450AP",
+    description: "Extra Bass headphones",
+    categoryName: "headphones",
+    brand: "",
+    imgURL:
+      "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/ecommerce/productIMG/headphones/Sony%20MDR-XB450AP%20Extra%20Bass.png",
+    imgAlt: " headphone",
+    price: 1900,
+    discount: 10,
+    discountPrice: 1710,
+    inStock: true,
+    rating: 5,
+    allRating: 669,
   },
 ];
