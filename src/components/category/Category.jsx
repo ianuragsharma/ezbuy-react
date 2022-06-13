@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./category.css";
 import { Link } from "react-router-dom";
+import { useSortAndFilter } from "../../contexts";
 const Category = () => {
+  const { state, dispatch } = useSortAndFilter();
+  const { bySort, byCategories, byPrice, byRating } = state;
   const [error, setError] = useState();
   const [cateogory, setCateogory] = useState([]);
 
@@ -15,18 +18,23 @@ const Category = () => {
         setError(error);
       }
     })();
+    dispatch({ type: "CLEAR" });
   }, []);
   const cateogoryList = cateogory.map((item) => (
-    <div key={item._id} className="category-item">
-      <Link to="/somewhere">
+    <div
+      key={item._id}
+      className="category-item"
+      onClick={() => dispatch({ type: item.categoryName.toUpperCase() })}
+    >
+      <Link to="/products">
         <img
           loading="lazy"
           className="image-responsive"
           src={item.imgURL}
-          alt="headphones"
+          alt="category"
         />
 
-        <div className="category-overlay text-center">{item.categoryName}</div>
+        <div className="category-overlay  text-center">{item.categoryName}</div>
       </Link>
     </div>
   ));
