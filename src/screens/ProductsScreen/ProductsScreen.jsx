@@ -6,14 +6,18 @@ import {
   sortedFilterHelper,
   ratingFilterHelper,
   categoryFilterHelper,
+  searchFilterHelper,
 } from "../../helper";
 import { useDocumentTitle } from "../../hooks";
 const ProductsScreen = () => {
   const { state } = useSortAndFilter();
   const { products } = useProducts();
   useDocumentTitle("Products");
+  console.log(state);
+
   const sortedAndFilteredProducts = () => {
-    const bySortArr = sortedFilterHelper(products, state.bySort);
+    const bySearch = searchFilterHelper(products, state.bySearch);
+    const bySortArr = sortedFilterHelper(bySearch, state.bySort);
     const byPriceArr = priceFilterHelper(bySortArr, state.byPrice);
     const byRatingArr = ratingFilterHelper(byPriceArr, state.byRating);
     const byCategoryArr = categoryFilterHelper(byRatingArr, state.byCategories);

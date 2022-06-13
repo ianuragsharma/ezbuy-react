@@ -53,7 +53,11 @@ const sortAndFilterReducer = (state, action) => {
 
     case "PRICE_HIGH_TO_LOW":
       return { ...state, bySort: action.type };
-
+    case "SEARCH_PRODUCT":
+      return {
+        ...state,
+        bySearch: action.payload,
+      };
     case "CLEAR":
       return {
         bySort: "",

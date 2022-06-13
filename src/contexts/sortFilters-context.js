@@ -12,6 +12,7 @@ const FilterProvider = ({ children }) => {
     },
     byPrice: 100000,
     byRating: 0,
+    bySearch: "",
   };
 
   const [state, dispatch] = useReducer(

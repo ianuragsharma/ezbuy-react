@@ -23,7 +23,7 @@ const categoryFilterHelper = (product, catergory) => {
   }
   if (catergory.smartphone) {
     let newProductsArr = product.filter(
-      (item) => "smartphones" === item.categoryName
+      (item) => "smartphone" === item.categoryName
     );
     catergoryFilterArr.push(...newProductsArr);
   }
@@ -43,9 +43,17 @@ const categoryFilterHelper = (product, catergory) => {
   return catergoryFilterArr;
 };
 
+const searchFilterHelper = (products, searchQuery) =>
+  products.filter(({ title }) =>
+    searchQuery
+      ? title.toLowerCase().includes(searchQuery.toLowerCase())
+      : products
+  );
+
 export {
   categoryFilterHelper,
   priceFilterHelper,
   ratingFilterHelper,
   sortedFilterHelper,
+  searchFilterHelper,
 };
