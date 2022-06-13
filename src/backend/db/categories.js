@@ -8,7 +8,7 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "smartphones",
+    categoryName: "smartphone",
     description:
       "A smartphone is a cell phone that allows you to do more than make phone calls and send text messages.",
     imgURL:
