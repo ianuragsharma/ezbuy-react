@@ -1,11 +1,11 @@
 /* product filter  */
 .product-aside {
   width: 15rem;
-  height: 100vh;
+  height: 100%;
   overflow-y: hidden;
   padding: 1rem;
   float: left;
-  border-right: 2px solid var(--brand-secondary);
+  border-right: 1px solid var(--brand-secondary);
 }
 .product-aside > * {
   margin: 1rem 0rem;
