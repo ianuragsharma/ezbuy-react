@@ -32,10 +32,13 @@ const CartProduct = ({ cartItem }) => {
             Quantity:
             <button
               className="quantity-btn"
-              disabled={cartItem.quantity < 2}
-              onClick={() =>
-                updateQtyService(cartItem, cartDispatch, "decrement")
-              }
+              onClick={() => {
+                if (cartItem.quantity === 1)
+                  removeFromCartService(cartItem, cartDispatch);
+                else {
+                  updateQtyService(cartItem, cartDispatch, "decrement");
+                }
+              }}
             >
               <i className="fa-solid fa-circle-minus fa-lg"></i>
             </button>
