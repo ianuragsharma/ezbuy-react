@@ -2,15 +2,25 @@ import "./homescreen.css";
 import { Link } from "react-router-dom";
 import { Category, TrendingProducts } from "../../components";
 import { useDocumentTitle } from "../../hooks";
+import { useSortAndFilter } from "../../contexts";
 const HomeScreen = () => {
   useDocumentTitle("Home");
+  const { state, dispatch } = useSortAndFilter();
+  console.log(state);
   return (
     <>
       <section className="hero-banner">
         <div className="text-center">
           <h3 className="text-white hero-heading  fw-500">iPhone 13</h3>
           <button className="btn  link-btn text-lg text-primary">
-            <Link to="/somewhere">Buy Now</Link>
+            <Link
+              to="/products"
+              onClick={() =>
+                dispatch({ type: "SEARCH_PRODUCT", payload: "iphone" })
+              }
+            >
+              Buy Now
+            </Link>
           </button>
         </div>
       </section>

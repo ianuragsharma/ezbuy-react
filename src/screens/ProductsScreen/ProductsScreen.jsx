@@ -13,7 +13,7 @@ const ProductsScreen = () => {
   const { state } = useSortAndFilter();
   const { products } = useProducts();
   useDocumentTitle("Products");
-
+  console.log(state);
   const sortedAndFilteredProducts = () => {
     const bySearch = searchFilterHelper(products, state.bySearch);
     const bySortArr = sortedFilterHelper(bySearch, state.bySort);
