@@ -26,7 +26,6 @@ const Navbar = () => {
       <nav className="nav-container flex-row">
         <div className="flex-row logo-container">
           <Link to="/">
-            {/* <h4 className="fw-400   heading">ezBuy</h4> */}
             <img className="image-responsive logo" src="/favicon.png" alt="" />
           </Link>
 
