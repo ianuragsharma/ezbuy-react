@@ -29,11 +29,13 @@ const ProductsScreen = () => {
         <h4 className="text-center text-xl fw-400 product-heading">
           Total Products available : {sortedAndFilteredProducts().length}
         </h4>
-        <div className="product-list flex-row">
-          {products &&
-            sortedAndFilteredProducts().map((product) => (
-              <Product key={product._id} product={product} />
-            ))}
+        <div className="flex-row ">
+          <div className="all-products-container flex-row">
+            {products &&
+              sortedAndFilteredProducts().map((product) => (
+                <Product key={product._id} product={product} />
+              ))}
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,11 @@
 .product {
   padding: 1rem 0rem;
 }
+.all-products-container {
+  margin: 1.5rem;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
 
 @media screen and (max-width: 32em) {
   .product {
