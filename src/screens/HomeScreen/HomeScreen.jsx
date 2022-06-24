@@ -5,8 +5,7 @@ import { useDocumentTitle } from "../../hooks";
 import { useSortAndFilter } from "../../contexts";
 const HomeScreen = () => {
   useDocumentTitle("Home");
-  const { state, dispatch } = useSortAndFilter();
-  console.log(state);
+  const { dispatch } = useSortAndFilter();
   return (
     <>
       <section className="hero-banner">

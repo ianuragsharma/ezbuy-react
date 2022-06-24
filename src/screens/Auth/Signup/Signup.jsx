@@ -125,7 +125,7 @@ const Signup = () => {
                 value="term-condition"
                 required
               />
-              <label htmlFor="term-condition">
+              <label className="ml-1" htmlFor="term-condition">
                 I accept all term and condition
               </label>
             </span>

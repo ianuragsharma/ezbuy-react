@@ -1,0 +1,17 @@
+.profile-screen {
+  background-color: var(--bg-offgrey);
+  border-radius: 10px;
+  max-width: 30rem;
+  margin: 1rem auto;
+  border-radius: 5px;
+}
+.profile-header {
+}
+.profile-item {
+  flex: 0 0 33.33%;
+}
+.active-link {
+  background-color: var(--brand-primary);
+  color: var(--solid-white);
+  border-radius: 5px;
+}

@@ -7,3 +7,6 @@ export { Filter } from "./filter/Filter";
 export { CartProduct } from "./cartProduct/CartProduct";
 export { CartPrice } from "./cartPrice/CartPrice";
 export { CustomToast } from "./toast/CustomToast";
+export { UserProfile } from "./userProfile/UserProfile";
+export { UserOrders } from "./userOrders/UserOrders";
+export { UserAddresses } from "./userAddresses/UserAddresses";

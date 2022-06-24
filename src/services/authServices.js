@@ -8,16 +8,24 @@ const loginService = async (
   setEncodedToken
 ) => {
   try {
-    const { data } = await axios.post("/api/auth/login", {
+    const res = await axios.post("/api/auth/login", {
       email,
       password,
     });
-    setUser(data.foundUser);
-    localStorage.setItem("token", data.encodedToken);
-    navigate("/");
-    successToast(
-      `Welcome back ${data.foundUser.firstName} ${data.foundUser.lastName}`
-    );
+    const { data } = res;
+    if (res.status === 200) {
+      setUser(data.foundUser);
+      localStorage.setItem("token", data.encodedToken);
+      navigate("/");
+
+      const { email, firstName, lastName } = data.foundUser;
+      const userName = firstName + " " + lastName;
+      localStorage.setItem(
+        "ezBuy-user",
+        JSON.stringify({ email, firstName, lastName })
+      );
+      successToast(`Welcome back ${userName}`);
+    } else errorToast("Email or password is incorrect");
   } catch (error) {
     errorToast("Email or password is incorrect");
   }
@@ -32,18 +40,32 @@ const signupService = async (
   navigate
 ) => {
   try {
-    const { data } = await axios.post("/api/auth/signup", {
+    const {
+      data: { createdUser, encodedToken },
+    } = await axios.post("/api/auth/signup", {
       email,
       firstName,
       lastName,
       password,
     });
-    setUser(data.createdUser);
-    localStorage.setItem("token", data.encodedToken);
-    navigate("/");
-    successToast(
-      `Welcome to ezBuy ${data.createdUser.firstName} ${data.createdUser.lastName}`
+    setUser(createdUser);
+    localStorage.setItem("token", encodedToken);
+    const {
+      email: userEmail,
+      firstName: userFirstName,
+      lastName: userLastName,
+    } = createdUser;
+    const userName = userFirstName + " " + userLastName;
+    localStorage.setItem(
+      "ezBuy-user",
+      JSON.stringify({
+        email: userEmail,
+        firstName: userFirstName,
+        lastName: userLastName,
+      })
     );
+    navigate("/");
+    successToast(`Welcome to ezBuy ${userName}`);
   } catch (error) {
     error.response.status === 422
       ? errorToast("Email already Exist")

@@ -1,4 +1,4 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./navbar.css";
 import {
   useCart,
@@ -6,20 +6,19 @@ import {
   useAuth,
   useSortAndFilter,
 } from "../../contexts";
+import { successToast } from "../../helper";
 const Navbar = () => {
   let location = useLocation();
   const { cartState, cartDispatch } = useCart();
   const { wishlistState, wishlistDispatch } = useWishlist();
-  const { user, setUser } = useAuth();
+  const { user, handleLogout } = useAuth();
   const { state, dispatch } = useSortAndFilter();
   const { bySearch } = state;
-  const navigate = useNavigate();
   const logoutHandler = () => {
-    setUser(null);
-    localStorage.removeItem("token");
-    navigate("/");
+    handleLogout();
     cartDispatch({ type: "CLEAR_CART" });
     wishlistDispatch({ type: "CLEAR_WISHLIST" });
+    successToast(`You have successfully log out`);
   };
   return (
     <div>
@@ -49,15 +48,13 @@ const Navbar = () => {
         )}
 
         <ul className="flex-row navitem-container">
-          {user ? (
+          {user && (
             <button
               className="btn btn-outlined-secondary logout-btn text-base"
               onClick={logoutHandler}
             >
               Logout
             </button>
-          ) : (
-            ""
           )}
           <li>
             {user ? (
