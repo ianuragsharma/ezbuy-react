@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useCart, useWishlist, useAuth } from "../../contexts";
 import "./product.css";
 import { successToast, errorToast } from "../../helper";
@@ -13,6 +13,7 @@ const Product = ({ product }) => {
   const { wishlistState, wishlistDispatch } = useWishlist();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   // this function returns true if the porduct is present in the cartState by comparing the id of item in cartState and the product which is passed as prop
   const isAlreadyInCart = () =>
     cartState.some((item) => item._id === product._id);
@@ -23,7 +24,7 @@ const Product = ({ product }) => {
     if (user) {
       addToCartService(product, cartDispatch);
     } else {
-      navigate("/login");
+      navigate("/login", { state: { from: location }, replace: true });
       errorToast("Please login first");
     }
   };
@@ -31,7 +32,7 @@ const Product = ({ product }) => {
     if (user) {
       addToWishlistService(product, wishlistDispatch);
     } else {
-      navigate("/login");
+      navigate("/login", { state: { from: location }, replace: true });
       errorToast("Please login first");
     }
   };

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../contexts";
 import "./login.css";
 import { loginService } from "../../../services";
@@ -8,16 +8,22 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const { setUser, setEncodedToken } = useAuth();
+  const location = useLocation();
+  const { user, setUser, setEncodedToken } = useAuth();
   useDocumentTitle("Login");
   const loginHandler = (e) => {
     e.preventDefault();
-    loginService(email, password, setUser, navigate, setEncodedToken);
+    loginService(email, password, setUser, navigate, setEncodedToken, location);
   };
   const guestLoginHandler = () => {
     setEmail("anuragsharma0711@gmail.com");
     setPassword("anurag12");
   };
+  useEffect(() => {
+    if (user) {
+      navigate(location.state?.from?.pathname ?? "/", { replace: true });
+    }
+  }, [user]);
 
   return (
     <div>
