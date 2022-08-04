@@ -25,7 +25,9 @@ const Filter = () => {
               checked={bySort === "PRICE_LOW_TO_HIGH"}
               onChange={() => dispatch({ type: "PRICE_LOW_TO_HIGH" })}
             />
-            <label htmlFor="low">Price - Low to High</label>
+            <label className="ml-1" htmlFor="low">
+              Price - Low to High
+            </label>
           </div>
           <div>
             <input
@@ -35,7 +37,9 @@ const Filter = () => {
               checked={bySort === "PRICE_HIGH_TO_LOW"}
               onChange={() => dispatch({ type: "PRICE_HIGH_TO_LOW" })}
             />
-            <label htmlFor="high">Price - High to low</label>
+            <label className="ml-1" htmlFor="high">
+              Price - High to low
+            </label>
           </div>
         </div>
         <div className="filter-list">
@@ -72,7 +76,9 @@ const Filter = () => {
               checked={byCategories.smartphone}
               onChange={() => dispatch({ type: "SMARTPHONE" })}
             />
-            <label htmlFor="smartphone">Smartphone</label>
+            <label className="ml-1" htmlFor="smartphone">
+              Smartphone
+            </label>
           </div>
           <div>
             <input
@@ -82,7 +88,9 @@ const Filter = () => {
               checked={byCategories.laptop}
               onChange={() => dispatch({ type: "LAPTOP" })}
             />
-            <label htmlFor="laptop">Laptop</label>
+            <label className="ml-1" htmlFor="laptop">
+              Laptop
+            </label>
           </div>
           <div>
             <input
@@ -92,7 +100,9 @@ const Filter = () => {
               checked={byCategories.camera}
               onChange={() => dispatch({ type: "CAMERA" })}
             />
-            <label htmlFor="camera">Camera</label>
+            <label className="ml-1" htmlFor="camera">
+              Camera
+            </label>
           </div>
           <div>
             <input
@@ -102,7 +112,9 @@ const Filter = () => {
               checked={byCategories.headphones}
               onChange={() => dispatch({ type: "HEADPHONES" })}
             />
-            <label htmlFor="headphones">Headphones</label>
+            <label className="ml-1" htmlFor="headphones">
+              Headphones
+            </label>
           </div>
         </div>
         <div className="filter-list">
@@ -118,7 +130,9 @@ const Filter = () => {
                 dispatch({ type: "RATING", payload: event.target.value })
               }
             />
-            <label htmlFor="four">4 stars & above</label>
+            <label className="ml-1" htmlFor="four">
+              4 stars & above
+            </label>
           </div>
           <div>
             <input
@@ -131,7 +145,9 @@ const Filter = () => {
                 dispatch({ type: "RATING", payload: event.target.value })
               }
             />
-            <label htmlFor="three">3 Stars & above</label>
+            <label className="ml-1" htmlFor="three">
+              3 Stars & above
+            </label>
           </div>
           <div>
             <input
@@ -144,7 +160,9 @@ const Filter = () => {
                 dispatch({ type: "RATING", payload: event.target.value })
               }
             />
-            <label htmlFor="two">2 Stars & above</label>
+            <label className="ml-1" htmlFor="two">
+              2 Stars & above
+            </label>
           </div>
           <div>
             <input
@@ -157,7 +175,9 @@ const Filter = () => {
                 dispatch({ type: "RATING", payload: event.target.value })
               }
             />
-            <label htmlFor="one">1 Stars & above</label>
+            <label className="ml-1" htmlFor="one">
+              1 Stars & above
+            </label>
           </div>
         </div>
       </aside>
