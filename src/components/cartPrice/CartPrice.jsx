@@ -1,5 +1,6 @@
 import "./cartPrice.css";
 import { useCart } from "../../contexts";
+import { Link } from "react-router-dom";
 const CartPrice = () => {
   const { cartState } = useCart();
   const totalCartPrice = cartState.reduce(
@@ -34,9 +35,11 @@ const CartPrice = () => {
         </div>
       </div>
       <p className="fw-500">You will save Rs.{cartDiscount} on this order</p>
-      <button className="btn btn-solid-primary order-btn text-white  text-base">
-        Place Order
-      </button>
+      <Link to="/checkout">
+        <button className="btn btn-solid-primary order-btn text-white  text-base">
+          Checkout
+        </button>
+      </Link>
     </div>
   );
 };

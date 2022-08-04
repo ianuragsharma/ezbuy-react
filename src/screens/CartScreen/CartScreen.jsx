@@ -27,7 +27,9 @@ const CartScreen = () => {
             </h4>
           )}
         </div>
-        {cartState.length > 0 && <CartPrice />}
+        <div className="cartprice-conatiner">
+          {cartState.length > 0 && <CartPrice />}
+        </div>
       </section>
     </div>
   );

@@ -1,18 +1,26 @@
 .cart-container {
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 80rem;
 }
 .cart-heading {
   margin: 1.5rem 0rem;
 }
 .cart-products {
+  margin-left: 1rem;
   flex-wrap: wrap;
   gap: 1rem;
 }
+
 @media only screen and (max-width: 56em) {
   .cart-products {
     justify-content: center;
+  }
+  .cart-container {
+    flex-wrap: wrap;
+  }
+  .cartprice-conatiner {
+    margin: 0 auto;
   }
 }
 

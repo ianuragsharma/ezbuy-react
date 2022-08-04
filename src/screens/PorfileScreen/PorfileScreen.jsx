@@ -16,7 +16,7 @@ const PorfileScreen = () => {
           >
             Profile Info
           </NavLink>
-          {/* <NavLink
+          <NavLink
             end
             to="orders"
             className={({ isActive }) =>
@@ -33,7 +33,7 @@ const PorfileScreen = () => {
             }
           >
             Addresses
-          </NavLink> */}
+          </NavLink>
         </div>
         <section className="p-2">
           <Outlet />

@@ -9,6 +9,7 @@ import {
   CartProvider,
   WishlistProvider,
   AuthContextProvider,
+  OrderProvider,
 } from "./contexts";
 // Call make Server
 makeServer();
@@ -17,15 +18,17 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <AuthContextProvider>
-        <WishlistProvider>
-          <CartProvider>
-            <FilterProvider>
-              <ProductsProvider>
-                <App />
-              </ProductsProvider>
-            </FilterProvider>
-          </CartProvider>
-        </WishlistProvider>
+        <OrderProvider>
+          <WishlistProvider>
+            <CartProvider>
+              <FilterProvider>
+                <ProductsProvider>
+                  <App />
+                </ProductsProvider>
+              </FilterProvider>
+            </CartProvider>
+          </WishlistProvider>
+        </OrderProvider>
       </AuthContextProvider>
     </Router>
   </React.StrictMode>,
