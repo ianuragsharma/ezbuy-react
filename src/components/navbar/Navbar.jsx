@@ -66,7 +66,7 @@ const Navbar = () => {
             ) : (
               <Link to="/login" title="login">
                 <div className="badge badge-icon">
-                  <i className="fa-solid fa-user"></i>
+                  <i className="fa-solid fa-user "></i>
                 </div>
               </Link>
             )}
@@ -74,7 +74,7 @@ const Navbar = () => {
           <li>
             <Link to="./wishlist" title="Wishlist">
               <div className="badge badge-icon">
-                <i className="fa-regular fa-heart fa-lg"></i>
+                <i class="fa-solid fa-heart "></i>
                 {wishlistState.length > 0 && (
                   <div className="number  badge-secondary text-white">
                     {wishlistState.length}
@@ -87,7 +87,7 @@ const Navbar = () => {
           <li>
             <Link to="./cart" title="Cart">
               <div className="badge badge-icon">
-                <i className="fas fa-shopping-cart fa-lg"></i>
+                <i className="fas fa-shopping-cart "></i>
 
                 {cartState.length > 0 && (
                   <div className="number badge-secondary text-white">
