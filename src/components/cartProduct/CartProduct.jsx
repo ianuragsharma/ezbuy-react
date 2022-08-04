@@ -42,7 +42,7 @@ const CartProduct = ({ cartItem }) => {
             >
               <i className="fa-solid fa-circle-minus fa-lg"></i>
             </button>
-            <span>{cartItem.quantity}</span>
+            <span className="mx-1">{cartItem.quantity}</span>
             <button
               className="quantity-btn"
               onClick={() =>
