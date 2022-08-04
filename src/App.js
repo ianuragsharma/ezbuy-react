@@ -8,6 +8,7 @@ import {
   Login,
   Signup,
   PorfileScreen,
+  CheckoutScreen,
 } from "./screens";
 import {
   Footer,
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/" element={<ProtectedRoute />}>
             <Route path="/wishlist" element={<WishlistScreen />} />
             <Route path="/cart" element={<CartScreen />} />
+            <Route path="/checkout" element={<CheckoutScreen />} />
             <Route path="/profile" element={<PorfileScreen />}>
               <Route index element={<UserProfile />} />
               <Route path="addresses" element={<UserAddresses />} />

@@ -1,0 +1,7 @@
+.deliver-address-conatiner {
+}
+.deliver-container {
+  border-radius: 5px;
+  background-color: var(--bg-offgrey);
+  align-self: flex-start;
+}
