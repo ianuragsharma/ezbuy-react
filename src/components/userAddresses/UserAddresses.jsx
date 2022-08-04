@@ -1,7 +1,12 @@
+import { Addresses } from "../addresses/Addresses";
 import "./userAddresses.css";
 
 const UserAddresses = () => {
-  return <div>UserAddresses</div>;
+  return (
+    <div>
+      <Addresses />
+    </div>
+  );
 };
 
 export { UserAddresses };

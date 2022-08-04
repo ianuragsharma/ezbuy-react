@@ -11,3 +11,4 @@ export { UserProfile } from "./userProfile/UserProfile";
 export { UserOrders } from "./userOrders/UserOrders";
 export { UserAddresses } from "./userAddresses/UserAddresses";
 export { ProtectedRoute } from "./protectedRoute/ProtectedRoute";
+export { Addresses } from "./addresses/Addresses";
